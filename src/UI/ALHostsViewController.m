@@ -205,33 +205,33 @@
     __weak ALHostsViewController *weakSelf = self;
     if (host.state == ALHostStateOnline && !host.paired) {
         [titles addObject:L(@"Pair with a PIN")];
-        [actions addObject:^{ [weakSelf startPinPairing:host]; }];
+        [actions addObject:[^{ [weakSelf startPinPairing:host]; } copy]];
         [titles addObject:L(@"Pair with a one-time PIN (Apollo)")];
-        [actions addObject:^{ [weakSelf askOtpForHost:host]; }];
+        [actions addObject:[^{ [weakSelf askOtpForHost:host]; } copy]];
     }
     if (host.state == ALHostStateOnline && host.paired) {
         [titles addObject:L(@"Show games")];
-        [actions addObject:^{ [weakSelf openHost:host]; }];
+        [actions addObject:[^{ [weakSelf openHost:host]; } copy]];
     }
     if (host.state != ALHostStateOnline) {
         [titles addObject:L(@"Check again")];
-        [actions addObject:^{ [ALGameStream refreshHost:host completion:nil]; }];
+        [actions addObject:[^{ [ALGameStream refreshHost:host completion:nil]; } copy]];
         if (host.mac.length) {
             [titles addObject:L(@"Wake up the PC")];
-            [actions addObject:^{
+            [actions addObject:[^{
                 BOOL sent = [ALGameStream wakeHost:host];
                 [ALUtils alertWithTitle:L(@"Wake up the PC") message:sent ? L(@"The wake-up signal was sent. The PC should answer within a minute (Wake-on-LAN must be on in its BIOS and network card).") : L(@"The PC's network address is not known yet.")];
-            }];
+            } copy]];
         }
     }
     [titles addObject:L(@"Details")];
-    [actions addObject:^{ [weakSelf showDetailsForHost:host]; }];
+    [actions addObject:[^{ [weakSelf showDetailsForHost:host]; } copy]];
     if (host.paired) {
         [titles addObject:L(@"Unpair")];
-        [actions addObject:^{ [ALGameStream unpairHost:host completion:nil]; }];
+        [actions addObject:[^{ [ALGameStream unpairHost:host completion:nil]; } copy]];
     }
     [titles addObject:L(@"Remove from the list")];
-    [actions addObject:^{ [[ALHostStore shared] removeHost:host]; }];
+    [actions addObject:[^{ [[ALHostStore shared] removeHost:host]; } copy]];
     NSInteger destructive = (NSInteger)titles.count - 1;
     [ALAlerts sheetWithTitle:host.name ?: [host displayAddress] buttons:titles destructive:destructive from:self rect:rect handler:^(NSInteger index) {
         if (index >= 0 && index < (NSInteger)actions.count) ((dispatch_block_t)actions[(NSUInteger)index])();

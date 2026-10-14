@@ -81,7 +81,8 @@ static void ALDrCleanup(void) {}
 static int ALDrSubmit(PDECODE_UNIT du)
 {
     ALStreamSession *s = gActive;
-    if (!s || !s->_decoder) return DR_OK;
+    ALVideoDecoder *decoder = s.decoder;
+    if (!s || !decoder) return DR_OK;
     if (s->_lastFrameNumber && du->frameNumber > s->_lastFrameNumber + 1) s->_framesLost += (uint64_t)(du->frameNumber - s->_lastFrameNumber - 1);
     s->_lastFrameNumber = du->frameNumber;
     s->_framesReceived++;
@@ -100,7 +101,7 @@ static int ALDrSubmit(PDECODE_UNIT du)
     }
     BOOL keyframe = du->frameType == FRAME_TYPE_IDR;
     // the decoder lost its reference chain (a decode error or a backlog it threw away): only a keyframe helps
-    if (s->_decoder.needsKeyframe && !keyframe) {
+    if (decoder.needsKeyframe && !keyframe) {
         uint64_t now = ALMonotonicMicros();
         if (now - s->_lastIdrRequestUs > 1000000) {
             s->_lastIdrRequestUs = now;
@@ -108,7 +109,7 @@ static int ALDrSubmit(PDECODE_UNIT du)
             LiRequestIdrFrame();
         }
     }
-    [s->_decoder decodeAccessUnit:s->_frameBuffer length:off timestamp:du->rtpTimestamp keyframe:keyframe];
+    [decoder decodeAccessUnit:s->_frameBuffer length:off timestamp:du->rtpTimestamp keyframe:keyframe];
     return DR_OK;
 }
 
@@ -116,7 +117,7 @@ static int ALArInit(int audioConfiguration, const POPUS_MULTISTREAM_CONFIGURATIO
 {
     ALStreamSession *s = gActive;
     if (!s) return -1;
-    return [s->_audio startWithSampleRate:opusConfig->sampleRate channels:opusConfig->channelCount streams:opusConfig->streams
+    return [s.audio startWithSampleRate:opusConfig->sampleRate channels:opusConfig->channelCount streams:opusConfig->streams
                            coupledStreams:opusConfig->coupledStreams samplesPerFrame:opusConfig->samplesPerFrame mapping:opusConfig->mapping] ? 0 : -1;
 }
 
@@ -126,13 +127,13 @@ static void ALArStop(void) {}
 static void ALArCleanup(void)
 {
     ALStreamSession *s = gActive;
-    if (s) [s->_audio stop];
+    if (s) [s.audio stop];
 }
 
 static void ALArDecodeAndPlay(char *sampleData, int sampleLength)
 {
     ALStreamSession *s = gActive;
-    if (s) [s->_audio decodeAndPlay:(const unsigned char *)sampleData length:sampleLength];
+    if (s) [s.audio decodeAndPlay:(const unsigned char *)sampleData length:sampleLength];
 }
 
 static NSString *ALStageText(int stage)

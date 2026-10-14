@@ -354,42 +354,42 @@
     NSMutableArray *actions = [NSMutableArray array];
     __weak ALStreamViewController *weakSelf = self;
     [titles addObject:L(@"Keyboard")];
-    [actions addObject:^{ [weakSelf.keyInput becomeFirstResponder]; }];
+    [actions addObject:[^{ [weakSelf.keyInput becomeFirstResponder]; } copy]];
     [titles addObject:self.gamepad.hidden ? L(@"Show gamepad") : L(@"Hide gamepad")];
-    [actions addObject:^{ [ALSettings setTouchGamepad:weakSelf.gamepad.hidden]; }];
+    [actions addObject:[^{ [ALSettings setTouchGamepad:weakSelf.gamepad.hidden]; } copy]];
     NSArray *modeNames = @[ L(@"Touch: trackpad"), L(@"Touch: direct pointer"), L(@"Touch: touchscreen") ];
     [titles addObject:modeNames[self.touchMode]];
-    [actions addObject:^{
+    [actions addObject:[^{
         ALTouchMode next = (ALTouchMode)((weakSelf.touchMode + 1) % 3);
         [ALSettings setTouchMode:next];
         [weakSelf showToast:@[ L(@"Trackpad: drag to move the pointer, tap to click, tap twice and hold to drag, two fingers for the right button and scrolling."),
                                L(@"Direct pointer: the pointer follows your finger; tap to click, two fingers for the right button."),
                                L(@"Touchscreen: the PC gets real touches (Windows touch).") ][next]];
-    }];
+    } copy]];
     [titles addObject:self.statsLabel.hidden ? L(@"Show statistics") : L(@"Hide statistics")];
-    [actions addObject:^{ [ALSettings setShowStats:weakSelf.statsLabel.hidden]; }];
+    [actions addObject:[^{ [ALSettings setShowStats:weakSelf.statsLabel.hidden]; } copy]];
     [titles addObject:L(@"Send Escape")];
-    [actions addObject:^{ [weakSelf pressKeyNamed:@"escape"]; }];
+    [actions addObject:[^{ [weakSelf pressKeyNamed:@"escape"]; } copy]];
     [titles addObject:L(@"Send the Windows key")];
-    [actions addObject:^{ [weakSelf pressKeyNamed:@"win"]; }];
+    [actions addObject:[^{ [weakSelf pressKeyNamed:@"win"]; } copy]];
     [titles addObject:L(@"Send Alt+Tab")];
-    [actions addObject:^{ ALKeyStroke k = [ALInput keyNamed:@"tab"]; k.modifiers = ALModAlt; [weakSelf.session tapKey:k]; }];
+    [actions addObject:[^{ ALKeyStroke k = [ALInput keyNamed:@"tab"]; k.modifiers = ALModAlt; [weakSelf.session tapKey:k]; } copy]];
     if (self.host.serverCommands.count && [self.host hasPermission:ALPermServerCommand]) {
         [titles addObject:L(@"PC commands…")];
-        [actions addObject:^{ [weakSelf showServerCommands]; }];
+        [actions addObject:[^{ [weakSelf showServerCommands]; } copy]];
     }
     if (self.host.isApollo && [self.host hasPermission:ALPermClipboardSet]) {
         [titles addObject:L(@"Send the clipboard to the PC")];
-        [actions addObject:^{ [weakSelf sendClipboard]; }];
+        [actions addObject:[^{ [weakSelf sendClipboard]; } copy]];
     }
     if (self.host.isApollo && [self.host hasPermission:ALPermClipboardRead]) {
         [titles addObject:L(@"Get the PC's clipboard")];
-        [actions addObject:^{ [weakSelf fetchClipboard]; }];
+        [actions addObject:[^{ [weakSelf fetchClipboard]; } copy]];
     }
     [titles addObject:L(@"Disconnect (the game keeps running)")];
-    [actions addObject:^{ [weakSelf endWithMessage:nil quit:NO]; }];
+    [actions addObject:[^{ [weakSelf endWithMessage:nil quit:NO]; } copy]];
     [titles addObject:L(@"Quit game")];
-    [actions addObject:^{ [weakSelf endWithMessage:nil quit:YES]; }];
+    [actions addObject:[^{ [weakSelf endWithMessage:nil quit:YES]; } copy]];
     [ALAlerts sheetWithTitle:self.app.title buttons:titles destructive:(NSInteger)titles.count - 1 from:self rect:self.menuButton.frame handler:^(NSInteger index) {
         if (index >= 0 && index < (NSInteger)actions.count) ((dispatch_block_t)actions[(NSUInteger)index])();
     }];
