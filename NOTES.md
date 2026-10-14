@@ -136,6 +136,17 @@ mDNS service `_nvstream._tcp` in `local.` (NSNetServiceBrowser works on iOS 6); 
 /serverinfo identifies the host by `uniqueid`. Manual add by IP or name. Wake-on-LAN uses `mac` (HTTPS
 serverinfo only) - magic packet to UDP 9 broadcast.
 
+## Verified on the device (2026-10-15)
+
+iPad 2 (iPad2,2, iOS 6.1.3, the DEB in /Applications) against Apollo 7.1.431.-1 on a Windows PC: the identity
+(RSA-2048) is made in 5.4 s at first launch, mDNS finds the PC, PIN pairing works (the first paired client gets all
+Apollo permissions: `Permission` 119480064 = 0x071F1F00), the app list and box art load, the Desktop stream starts
+in 3 s (`rtspenc://` RTSP, encrypted control stream), 1024x768 decodes in ~16 ms per frame with no errors, rtt 2-6 ms
+on Wi-Fi, Opus audio plays (10 ms packets, ~37 ms buffered), touch as a trackpad moves and clicks on the PC.
+Apollo sends audio only while something plays (no packets in silence; one underrun when a sound ends is normal).
+A 4:3 stream of a 16:9 desktop comes letterboxed by the host - the virtual display option avoids that.
+The on-screen gamepad needs the ViGEmBus driver on the PC.
+
 ## Device constraints (from GFN6)
 
 - The A5 hardware decoder needs ~16.7 ms per 1024x768 H.264 frame: **30 fps is smooth, 60 fps is borderline** ->
