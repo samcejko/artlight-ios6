@@ -1,0 +1,2 @@
+/* Artlight - English. The English text is the key everywhere (the L() macro), so this file only carries the few
+   strings whose key is not the text itself. */

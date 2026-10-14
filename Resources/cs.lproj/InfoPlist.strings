@@ -1,0 +1,2 @@
+/* Artlight - čeština: texty o soukromí z Info.plist */
+"NSLocalNetworkUsageDescription" = "Artlight hledá v místní síti herní počítače se Sunshine nebo Apollem a streamuje z nich hry.";

@@ -1,0 +1,2 @@
+/* Artlight - English: the privacy texts of Info.plist */
+"NSLocalNetworkUsageDescription" = "Artlight looks for gaming PCs running Sunshine or Apollo on your local network and streams games from them.";

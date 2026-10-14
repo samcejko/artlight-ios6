@@ -1,0 +1,267 @@
+/* Artlight - čeština. Klíčem je anglický text (viz zdrojáky, makro L). */
+
+/* Identita a šifrování */
+"Could not create the client certificate." = "Nepodařilo se vytvořit certifikát tohoto zařízení.";
+"Could not create the client certificate (error %d)." = "Nepodařilo se vytvořit certifikát tohoto zařízení (chyba %d).";
+"Cancelled." = "Zrušeno.";
+
+/* Spojení s PC */
+"The host answered with error %ld." = "Počítač odpověděl chybou %ld.";
+"The host sent an answer Artlight does not understand." = "Počítač poslal odpověď, které Artlight nerozumí.";
+"Another PC answers at %@." = "Na adrese %@ odpovídá jiný počítač.";
+"The PC has no address yet." = "Počítač zatím nemá žádnou adresu.";
+"Type the PC's address." = "Napiš adresu počítače.";
+"This does not look like a Sunshine or Apollo PC." = "Tohle nevypadá jako počítač se Sunshine nebo Apollem.";
+"The client certificate is not ready yet." = "Certifikát tohoto zařízení ještě není připravený.";
+"The address %@ could not be found." = "Adresu %@ se nepodařilo najít.";
+"%@ did not answer." = "%@ neodpovídá.";
+"Could not connect to %@ (port %d)." = "Nepodařilo se připojit k %@ (port %d).";
+"The host sent an incomplete answer." = "Počítač poslal neúplnou odpověď.";
+"Sending to the host failed." = "Odeslání do počítače selhalo.";
+"The connection to the host broke." = "Spojení s počítačem se přerušilo.";
+"The host's answer is too large." = "Odpověď počítače je příliš velká.";
+"The secure connection to the host failed." = "Zabezpečené spojení s počítačem selhalo.";
+"The PC presented a different certificate than when it was paired. Pair it again." = "Počítač ukázal jiný certifikát než při párování. Spáruj ho znovu.";
+
+/* Párování */
+"The PC refused to pair." = "Počítač spárování odmítl.";
+"Another device is pairing with this PC right now. Try again in a moment." = "S tímto počítačem se právě páruje jiné zařízení. Zkus to za chvíli znovu.";
+"The PC sent a certificate Artlight cannot read." = "Počítač poslal certifikát, který Artlight neumí přečíst.";
+"The PC sent a broken pairing answer." = "Počítač poslal poškozenou odpověď při párování.";
+"The PC's pairing answer is not signed by its certificate." = "Odpověď počítače při párování není podepsaná jeho certifikátem.";
+"The one-time PIN or the passphrase is wrong (or expired)." = "Jednorázový PIN nebo heslo je špatně (nebo už vypršelo).";
+"The PIN typed on the PC was wrong." = "PIN zadaný na počítači byl špatně.";
+"Signing failed." = "Podepsání selhalo.";
+"The PC is not reachable." = "Počítač není dostupný.";
+"Pair with the PC first." = "Nejdřív se s počítačem spáruj.";
+
+/* Hry */
+"The PC could not resume the game." = "Počítač nedokázal hru obnovit.";
+"The PC could not start the game." = "Počítač nedokázal hru spustit.";
+"The PC did not quit the game." = "Počítač hru neukončil.";
+"The game was started by another device; quit it there." = "Hru spustilo jiné zařízení, ukonči ji tam.";
+"The PC does not allow this device to read its clipboard (Apollo: Clients page)." = "Počítač tomuto zařízení nedovoluje číst svou schránku (Apollo: stránka Clients).";
+"The PC does not allow this device to set its clipboard (Apollo: Clients page)." = "Počítač tomuto zařízení nedovoluje měnit svou schránku (Apollo: stránka Clients).";
+
+/* Průběh připojování */
+"Getting ready…" = "Připravuji se…";
+"Finding the PC…" = "Hledám počítač…";
+"Preparing the sound…" = "Připravuji zvuk…";
+"Agreeing on the stream with the PC…" = "Domlouvám se s počítačem na přenosu…";
+"Opening the control channel…" = "Otevírám řídicí kanál…";
+"Preparing the picture…" = "Připravuji obraz…";
+"Preparing the controls…" = "Připravuji ovládání…";
+"Connecting the control channel…" = "Připojuji řídicí kanál…";
+"Starting the picture…" = "Spouštím obraz…";
+"Starting the sound…" = "Spouštím zvuk…";
+"Starting the controls…" = "Spouštím ovládání…";
+"Starting the stream failed at \"%s\" (error %d)." = "Spuštění přenosu selhalo v kroku „%s“ (chyba %d).";
+"Check that the PC's firewall lets these ports through: %s." = "Zkontroluj, že firewall na počítači propouští tyto porty: %s.";
+"No picture arrived from the PC. Check that its firewall lets UDP ports 47998-48000 through." = "Z počítače nepřišel žádný obraz. Zkontroluj, že jeho firewall propouští UDP porty 47998–48000.";
+"The connection is too unstable for the stream. Try a lower bitrate or move closer to the Wi-Fi router." = "Spojení je na přenos moc nestabilní. Zkus nižší datový tok nebo jdi blíž k Wi-Fi routeru.";
+"The PC ended the stream right after it started. Is the game or the PC's screen locked?" = "Počítač ukončil přenos hned po startu. Není hra nebo obrazovka počítače zamčená?";
+"The PC is showing protected content that cannot be streamed." = "Počítač zobrazuje chráněný obsah, který nejde přenášet.";
+"The PC could not convert its picture for the stream (try another resolution)." = "Počítač nedokázal převést obraz pro přenos (zkus jiné rozlišení).";
+"The connection to the PC was lost (error %d)." = "Spojení s počítačem se ztratilo (chyba %d).";
+"This device has no usable hardware video decoder (VideoToolbox)." = "Toto zařízení nemá použitelný hardwarový dekodér videa (VideoToolbox).";
+"Resuming the game on the PC…" = "Obnovuji hru na počítači…";
+"Starting the game on the PC…" = "Spouštím hru na počítači…";
+"Connecting to the stream…" = "Připojuji se k přenosu…";
+"The stream could not start (error %d)." = "Přenos se nepodařilo spustit (chyba %d).";
+
+/* Obecné */
+"Cancel" = "Zrušit";
+"OK" = "OK";
+"Back" = "Back";
+"Start" = "Start";
+
+/* Seznam her */
+"Quit game" = "Ukončit hru";
+"The PC no longer knows this device. Go back and pair again." = "Počítač už toto zařízení nezná. Vrať se a spáruj ho znovu.";
+"The PC does not answer.\n%@" = "Počítač neodpovídá.\n%@";
+"The PC offers no apps. Add some in Sunshine's or Apollo's web page." = "Počítač nenabízí žádné aplikace. Přidej je na webové stránce Sunshine nebo Apolla.";
+"Resume" = "Pokračovat";
+"Apollo does not let this device list or start apps yet. Allow it on the Clients page of Apollo's web interface on the PC." = "Apollo zatím tomuto zařízení nedovoluje zobrazit ani spouštět aplikace. Povol to na stránce Clients ve webovém rozhraní Apolla na počítači.";
+"Apollo does not let this device start apps. Allow \"Launch\" on the Clients page of Apollo's web interface." = "Apollo tomuto zařízení nedovoluje spouštět aplikace. Povol „Launch“ na stránce Clients ve webovém rozhraní Apolla.";
+"%@ is running on the PC. Quit it and start %@?" = "Na počítači běží %@. Ukončit ji a spustit %@?";
+"Another app" = "Jiná aplikace";
+"Quit and start" = "Ukončit a spustit";
+"Quit %@ on the PC? Anything not saved in the game is lost." = "Ukončit %@ na počítači? Co není ve hře uložené, se ztratí.";
+"the running app" = "běžící aplikaci";
+"Quit" = "Ukončit";
+"Quitting the game on the PC…" = "Ukončuji hru na počítači…";
+"RUNNING" = "BĚŽÍ";
+
+/* Otevírání odkazů */
+"Open Link" = "Otevřít odkaz";
+"Open in %@" = "Otevřít v aplikaci %@";
+"Copy link" = "Kopírovat odkaz";
+"Open in Safari" = "Otevřít v Safari";
+"Open in Surfari" = "Otevřít v Surfari";
+
+/* Seznam počítačů */
+"Client certificate" = "Certifikát zařízení";
+"Gaming PCs" = "Herní počítače";
+"Preparing this device's certificate for pairing (only once; it can take up to a minute)…" = "Připravuji certifikát tohoto zařízení pro párování (jen jednou, může to trvat až minutu)…";
+"PCs running Sunshine or Apollo on this network appear here by themselves. Tap one to pair with it or to see its games." = "Počítače se Sunshine nebo Apollem v této síti se tu objeví samy. Klepnutím se s počítačem spáruješ nebo uvidíš jeho hry.";
+"Artlight streams games from your own PC. Install Sunshine or Apollo on the PC first." = "Artlight streamuje hry z tvého vlastního počítače. Nejdřív na něj nainstaluj Sunshine nebo Apollo.";
+"Online" = "Zapnutý";
+"Offline" = "Vypnutý";
+"Checking…" = "Zjišťuji…";
+"Unknown" = "Neznámý stav";
+"paired" = "spárovaný";
+"not paired" = "nespárovaný";
+"playing %@" = "hraje se %@";
+"a game is running" = "běží hra";
+"Looking for PCs…" = "Hledám počítače…";
+"Tap + to add one by its address." = "Klepnutím na + ho přidáš podle adresy.";
+"Add a PC by its address…" = "Přidat počítač podle adresy…";
+"Remove" = "Odebrat";
+"Pair with a PIN" = "Spárovat pomocí PINu";
+"Pair with a one-time PIN (Apollo)" = "Spárovat jednorázovým PINem (Apollo)";
+"Show games" = "Zobrazit hry";
+"Check again" = "Zkusit znovu";
+"Wake up the PC" = "Probudit počítač";
+"The wake-up signal was sent. The PC should answer within a minute (Wake-on-LAN must be on in its BIOS and network card)." = "Signál k probuzení byl odeslán. Počítač by měl do minuty odpovědět (v BIOSu a síťové kartě musí být zapnuté Wake-on-LAN).";
+"The PC's network address is not known yet." = "Síťová (MAC) adresa počítače zatím není známá.";
+"Details" = "Podrobnosti";
+"Unpair" = "Zrušit spárování";
+"Remove from the list" = "Odebrat ze seznamu";
+"Address: %@\n" = "Adresa: %@\n";
+"Host version: %@\n" = "Verze serveru: %@\n";
+"MAC address: %@\n" = "MAC adresa: %@\n";
+"Paired: %@\n" = "Spárováno: %@\n";
+"yes" = "ano";
+"no" = "ne";
+"list apps" = "seznam aplikací";
+"view" = "sledování";
+"launch" = "spouštění";
+"gamepad" = "gamepad";
+"touch" = "dotyk";
+"mouse" = "myš";
+"keyboard" = "klávesnice";
+"clipboard to PC" = "schránka do PC";
+"clipboard from PC" = "schránka z PC";
+"commands" = "příkazy";
+"Allowed (Apollo): %@\n" = "Povoleno (Apollo): %@\n";
+"nothing" = "nic";
+"PC commands: %@\n" = "Příkazy počítače: %@\n";
+"Virtual display: %@\n" = "Virtuální displej: %@\n";
+"ready" = "připravený";
+"driver not ready" = "ovladač není připravený";
+"Last error: %@\n" = "Poslední chyba: %@\n";
+"PC" = "Počítač";
+"Add a PC" = "Přidat počítač";
+"The PC's IP address or name (as shown in Sunshine or Apollo), optionally with :port." = "IP adresa nebo název počítače (jak ho ukazuje Sunshine nebo Apollo), případně s :portem.";
+"Add" = "Přidat";
+"Contacting %@…" = "Kontaktuji %@…";
+"%@\n\nIs Sunshine or Apollo running on the PC, and does its firewall allow it?" = "%@\n\nBěží na počítači Sunshine nebo Apollo a pouští ho firewall?";
+"Pairing" = "Párování";
+"This device's certificate is still being made. Try again in a moment." = "Certifikát tohoto zařízení se ještě vytváří. Zkus to za chvíli.";
+"One-time PIN (Apollo)" = "Jednorázový PIN (Apollo)";
+"In Apollo's web page on the PC, open \"PIN\", choose a passphrase and create a one-time PIN, then type both here." = "Na webové stránce Apolla na počítači otevři „PIN“, zvol heslo a vytvoř jednorázový PIN. Pak obojí napiš sem.";
+"Pair" = "Spárovat";
+"The PIN has 4 digits and the passphrase at least 4 characters." = "PIN má 4 číslice a heslo aspoň 4 znaky.";
+"PIN (4 digits)" = "PIN (4 číslice)";
+"Passphrase" = "Heslo";
+"Pairing with the one-time PIN…" = "Páruji pomocí jednorázového PINu…";
+"On the PC, open the Sunshine or Apollo web page (https://%@:47990), go to \"PIN\" and type this PIN:\n\n%@" = "Na počítači otevři webovou stránku Sunshine nebo Apolla (https://%@:47990), jdi na „PIN“ a zadej tento PIN:\n\n%@";
+"Pairing with %@" = "Párování s %@";
+"the PC" = "počítačem";
+"Pairing failed" = "Párování selhalo";
+
+/* Záložky */
+"PCs" = "Počítače";
+"Settings" = "Nastavení";
+
+/* Nastavení */
+"recommended" = "doporučeno";
+"Screen (%dx%d)" = "Obrazovka (%dx%d)";
+"heavy" = "náročné";
+"Trackpad" = "Touchpad";
+"Direct pointer" = "Přímý kurzor";
+"Touchscreen" = "Dotyková obrazovka";
+"Stream" = "Přenos";
+"Apollo" = "Apollo";
+"Controls" = "Ovládání";
+"Appearance" = "Vzhled";
+"This device" = "Toto zařízení";
+"About" = "O aplikaci";
+"1024x768 at 30 fps is what the iPad 2 decodes smoothly. 60 fps and bigger pictures need more decoding power than older devices have; a lower bitrate helps a weak Wi-Fi." = "1024x768 při 30 fps iPad 2 dekóduje plynule. 60 fps a větší obraz potřebují víc výkonu, než starší zařízení mají; nižší datový tok pomůže na slabé Wi-Fi.";
+"Apollo can make a virtual monitor with exactly this device's resolution for the stream (Windows PCs with Apollo's display driver)." = "Apollo umí pro přenos vytvořit virtuální monitor přesně v rozlišení tohoto zařízení (počítače s Windows a ovladačem displeje od Apolla).";
+"During a stream, tap the gear at the top for the keyboard, the touch mode and the menu." = "Během přenosu klepni na ozubené kolečko nahoře – je tam klávesnice, režim dotyku a menu.";
+"A new certificate makes every PC forget this device: you will have to pair again." = "S novým certifikátem toto zařízení všechny počítače zapomenou a bude potřeba je spárovat znovu.";
+"Artlight is free software (GPLv3) built on moonlight-common-c. It is not affiliated with Moonlight, Artemis, Sunshine, Apollo or NVIDIA." = "Artlight je svobodný software (GPLv3) postavený na moonlight-common-c. Nemá nic společného s projekty Moonlight, Artemis, Sunshine, Apollo ani s firmou NVIDIA.";
+"Resolution" = "Rozlišení";
+"Frame rate" = "Snímková frekvence";
+"Bitrate" = "Datový tok";
+"Adjust game settings" = "Přizpůsobit nastavení hry";
+"Play sound on the PC too" = "Přehrávat zvuk i na počítači";
+"Statistics overlay" = "Statistiky přes obraz";
+"Virtual display" = "Virtuální displej";
+"On-screen gamepad" = "Gamepad na obrazovce";
+"Gamepad opacity" = "Průhlednost gamepadu";
+"Touch on the picture" = "Dotyk na obraze";
+"Pointer speed" = "Rychlost kurzoru";
+"Dark theme" = "Tmavý vzhled";
+"Name on the PC" = "Název na počítači";
+"Make a new certificate" = "Vytvořit nový certifikát";
+"Version" = "Verze";
+"Source code" = "Zdrojový kód";
+"Open-source licenses" = "Licence open source";
+"Support the development" = "Podpořit vývoj";
+"Smooth on the iPad 2 and on Wi-Fi" = "Plynulé na iPadu 2 i přes Wi-Fi";
+"Smoother motion; needs a newer device" = "Plynulejší pohyb; potřebuje novější zařízení";
+"Drag to move the pointer, tap to click, two fingers for the right button and the wheel" = "Tažením posouváš kurzor, klepnutím klikáš, dvěma prsty pravé tlačítko a kolečko";
+"The pointer jumps to your finger; tap to click there" = "Kurzor skočí pod prst; klepnutím tam klikneš";
+"Real touches on a Windows PC (Sunshine and Apollo)" = "Skutečné doteky na počítači s Windows (Sunshine i Apollo)";
+"Every PC will forget this device and you will have to pair again. Continue?" = "Všechny počítače toto zařízení zapomenou a bude potřeba je spárovat znovu. Pokračovat?";
+"Make new" = "Vytvořit nový";
+"Done. Pair your PCs again." = "Hotovo. Spáruj své počítače znovu.";
+"Licenses" = "Licence";
+"The license texts are added by the build." = "Texty licencí přidává sestavení.";
+
+/* Přenos */
+"Connecting…" = "Připojuji…";
+"Stream menu" = "Menu přenosu";
+"Disconnected because Artlight went to the background. The game is still running on the PC: tap it to resume." = "Odpojeno, protože Artlight přešel do pozadí. Hra na počítači pořád běží – klepnutím na ni pokračuješ.";
+"Connected, waiting for the first picture…" = "Připojeno, čekám na první obraz…";
+"The connection is weak: lower the bitrate if the picture breaks up." = "Spojení je slabé: když se obraz rozpadá, sniž datový tok.";
+"Tap the gear at the top for the keyboard and the menu." = "Klávesnici a menu najdeš pod ozubeným kolečkem nahoře.";
+"Keyboard" = "Klávesnice";
+"Show gamepad" = "Zobrazit gamepad";
+"Hide gamepad" = "Skrýt gamepad";
+"Touch: trackpad" = "Dotyk: touchpad";
+"Touch: direct pointer" = "Dotyk: přímý kurzor";
+"Touch: touchscreen" = "Dotyk: dotyková obrazovka";
+"Trackpad: drag to move the pointer, tap to click, tap twice and hold to drag, two fingers for the right button and scrolling." = "Touchpad: tažením posouváš kurzor, klepnutím klikáš, dvojklepnutím a podržením táhneš, dvěma prsty pravé tlačítko a posouvání.";
+"Direct pointer: the pointer follows your finger; tap to click, two fingers for the right button." = "Přímý kurzor: kurzor jde za prstem; klepnutím klikáš, dvěma prsty pravé tlačítko.";
+"Touchscreen: the PC gets real touches (Windows touch)." = "Dotyková obrazovka: počítač dostává skutečné doteky (dotyk ve Windows).";
+"Show statistics" = "Zobrazit statistiky";
+"Hide statistics" = "Skrýt statistiky";
+"Send Escape" = "Poslat Escape";
+"Send the Windows key" = "Poslat klávesu Windows";
+"Send Alt+Tab" = "Poslat Alt+Tab";
+"PC commands…" = "Příkazy počítače…";
+"Send the clipboard to the PC" = "Poslat schránku do počítače";
+"Get the PC's clipboard" = "Načíst schránku z počítače";
+"Disconnect (the game keeps running)" = "Odpojit (hra poběží dál)";
+"PC commands" = "Příkazy počítače";
+"Sent: %@" = "Odesláno: %@";
+"This PC does not take commands." = "Tento počítač příkazy nepřijímá.";
+"The clipboard of this device is empty." = "Schránka tohoto zařízení je prázdná.";
+"The clipboard is on the PC now (paste it there)." = "Schránka je teď v počítači (vlož ji tam).";
+"The PC's clipboard was copied to this device." = "Schránka počítače se zkopírovala do tohoto zařízení.";
+"The PC's clipboard is empty." = "Schránka počítače je prázdná.";
+"Win is held for the next key (tap Win again to send it alone)." = "Win se podrží pro další klávesu (dalším klepnutím na Win ji pošleš samotnou).";
+"%@ is held for the next key." = "%@ se podrží pro další klávesu.";
+"%@ released." = "%@ uvolněno.";
+
+/* Formátování (ALUtils) */
+"%@ viewers" = "%@ diváků";
+"%ld min" = "%ld min";
+"just now" = "právě teď";
+"%ld min ago" = "před %ld min";
+"%ld h ago" = "před %ld h";
+"yesterday" = "včera";
+"%ld days ago" = "před %ld dny";

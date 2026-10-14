@@ -1,0 +1,9 @@
+Package: com.samcejko.artlight
+Name: Artlight
+Version: 0.1.0
+Architecture: iphoneos-arm
+Description: Game streaming from your own PC for iOS 6 (universal): plays games from Sunshine and Apollo hosts (the protocol of Moonlight and Artemis), PIN and one-time-PIN pairing, app list with box art, hardware H.264 decoding, touch gamepad, mouse and keyboard
+Maintainer: samcejko
+Author: samcejko
+Section: Games
+Depends: firmware (>= 6.0), firmware (<< 11.0)

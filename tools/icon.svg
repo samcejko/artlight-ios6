@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Artlight icon: a glossy indigo tile, a warm sunrise of light rays and a white gamepad in front of it -
+     game streaming from your own PC (Sunshine/Apollo), without anybody else's marks.
+     160-unit viewBox like the other apps of the family; iOS adds the rounded mask, the gloss is ours (UIPrerenderedIcon). -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="1024" height="1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4a3a9a"/>
+      <stop offset="0.55" stop-color="#241a5c"/>
+      <stop offset="1" stop-color="#110b30"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="80" cy="66" r="34" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff6c8"/>
+      <stop offset="0.45" stop-color="#ffc83a"/>
+      <stop offset="1" stop-color="#ff8a1e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="rays" cx="80" cy="66" r="80" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffd24a" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#ff9a2a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#d4d8e6"/>
+    </linearGradient>
+    <linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.40"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.03"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2.4"/>
+      <feOffset dx="0" dy="2.5" result="o"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.65"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="160" height="160" fill="url(#bg)"/>
+  <!-- light rays around the sun (none straight down: the gamepad sits there) -->
+  <g fill="url(#rays)">
+    <path d="M80 66 L74 0 L86 0 Z"/>
+    <path d="M80 66 L118 2 L128 9 Z"/>
+    <path d="M80 66 L152 26 L157 37 Z"/>
+    <path d="M80 66 L160 72 L158 84 Z"/>
+    <path d="M80 66 L148 120 L140 129 Z"/>
+    <path d="M80 66 L20 120 L12 111 Z"/>
+    <path d="M80 66 L2 84 L0 72 Z"/>
+    <path d="M80 66 L3 37 L8 26 Z"/>
+    <path d="M80 66 L32 9 L42 2 Z"/>
+  </g>
+  <circle cx="80" cy="66" r="34" fill="url(#sun)"/>
+  <!-- the gamepad -->
+  <g filter="url(#shadow)">
+    <path d="M50 86 H110 C122 86 128 94 130 106 C132 118 130 128 122 130 C114 132 108 126 104 120 H56 C52 126 46 132 38 130 C30 128 28 118 30 106 C32 94 38 86 50 86 Z" fill="url(#pad)"/>
+  </g>
+  <!-- d-pad and buttons -->
+  <path d="M47 99 h6 v6 h6 v6 h-6 v6 h-6 v-6 h-6 v-6 h6 Z" fill="#3a3270"/>
+  <circle cx="106" cy="102" r="4.2" fill="#3a3270"/>
+  <circle cx="115" cy="109" r="4.2" fill="#ff9a2a"/>
+  <circle cx="97" cy="109" r="4.2" fill="#3a3270"/>
+  <circle cx="106" cy="116" r="4.2" fill="#3a3270"/>
+  <!-- glass highlight -->
+  <path d="M0 0 H160 V58 C120 86 40 86 0 58 Z" fill="url(#gloss)"/>
+</svg>
