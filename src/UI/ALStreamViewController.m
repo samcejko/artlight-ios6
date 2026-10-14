@@ -292,6 +292,11 @@
     if (!self.gamepad.hidden) {
         LiSendControllerArrivalEvent(0, 0x1, LI_CTYPE_XBOX, 0xFFFF & ~(ALPadGuide), LI_CCAP_ANALOG_TRIGGERS);
     }
+    // Apollo gives devices paired after the first one no input rights until the user allows them on its Clients page
+    long long inputs = ALPermInputController | ALPermInputTouch | ALPermInputMouse | ALPermInputKeyboard;
+    if (self.host.isApollo && self.host.permission >= 0 && !(self.host.permission & inputs)) {
+        [self showToast:L(@"Apollo ignores this device's controls: allow input on the Clients page of Apollo's web interface.")];
+    }
 }
 
 - (void)streamSession:(ALStreamSession *)session didEnd:(NSString *)message

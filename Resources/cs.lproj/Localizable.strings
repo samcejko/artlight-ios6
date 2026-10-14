@@ -256,6 +256,7 @@
 "Win is held for the next key (tap Win again to send it alone)." = "Win se podrží pro další klávesu (dalším klepnutím na Win ji pošleš samotnou).";
 "%@ is held for the next key." = "%@ se podrží pro další klávesu.";
 "%@ released." = "%@ uvolněno.";
+"Apollo ignores this device's controls: allow input on the Clients page of Apollo's web interface." = "Apollo ignoruje ovládání z tohoto zařízení: povol vstup na stránce Clients ve webovém rozhraní Apolla.";
 
 /* Formátování (ALUtils) */
 "%@ viewers" = "%@ diváků";
