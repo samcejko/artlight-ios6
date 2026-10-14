@@ -20,7 +20,8 @@ including the Apollo extras that the Android client Artemis knows.
 iOS 6: install the **DEB** (Cydia, or `dpkg -i` then `su mobile -c uicache`). It must be the DEB: it goes into
 `/Applications`, where the app may open the hardware video decoder; an IPA in an app container is sandboxed away from
 it and shows a black screen. iOS 14-17: the `iphoneos-arm64` DEB for rootless jailbreaks, the `-arm64.ipa` for
-TrollStore.
+TrollStore (not tested on a device yet). Releases: [GitHub](https://github.com/samcejko/artlight-ios6/releases), or
+the Cydia repository `http://repo.samcejko.eu/`.
 
 On the PC: install Sunshine or Apollo, then in Artlight tap the PC and pair. For a normal pairing Artlight shows a
 4-digit PIN that you type on the PC's web page (`https://<pc>:47990`, PIN). With Apollo you can instead create a
