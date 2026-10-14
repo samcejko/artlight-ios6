@@ -219,6 +219,20 @@
 - (BOOL)prefersHomeIndicatorAutoHidden { return YES; }
 #endif
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    // iOS 6 only listens to the application for the status bar (iOS 7+ ask prefersStatusBarHidden)
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
+    ALModernStatusBarChanged(self);
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
