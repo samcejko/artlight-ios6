@@ -27,8 +27,9 @@ static char kALDelegateKey;
     if (self.done) return;
     self.done = YES;
     ALSheetHandler h = self.sheetHandler;
-    objc_setAssociatedObject(sheet, &kALDelegateKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     NSInteger index = (buttonIndex < 0 || buttonIndex == sheet.cancelButtonIndex) ? -1 : buttonIndex - self.firstOtherIndex;
+    // Removing the association can release the delegate itself.
+    objc_setAssociatedObject(sheet, &kALDelegateKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     if (h) h(index);
 }
 
@@ -58,14 +59,20 @@ static char kALDelegateKey;
     d.firstOtherIndex = 0;
     for (NSUInteger i = 0; i < buttons.count; i++) {
         NSInteger idx = [sheet addButtonWithTitle:buttons[i]];
-        if ((NSInteger)i == destructive) sheet.destructiveButtonIndex = idx;
+        // UIKit has an internal bug in UIActionSheetTableView (used whenever an action sheet scrolls,
+        // e.g. in landscape): it assumes destructiveButtonIndex is 0 and shifts all table row indices
+        // by +1 if destructiveButtonIndex != -1. Therefore only set destructiveButtonIndex if it
+        // really is 0, or if there are very few buttons that will never trigger scrolling.
+        if ((NSInteger)i == destructive && (destructive == 0 || buttons.count <= 3)) {
+            sheet.destructiveButtonIndex = idx;
+        }
     }
     sheet.cancelButtonIndex = [sheet addButtonWithTitle:L(@"Cancel")];
     objc_setAssociatedObject(sheet, &kALDelegateKey, d, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     UIView *view = controller.view;
     if (ALIsPad() && !CGRectIsEmpty(rect)) [sheet showFromRect:rect inView:view animated:YES];
     else if (controller.tabBarController) [sheet showFromTabBar:controller.tabBarController.tabBar];
-    else [sheet showInView:view];
+    else [sheet showInView:view.window ?: view];
     return sheet;
 }
 
