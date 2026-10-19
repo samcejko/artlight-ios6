@@ -251,6 +251,6 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -e
-          TAG="feedback-${{ github.run_id }}"
+          TAG="feedback-${{ github.run_id }}-${{ matrix.name }}"
           gh release view "$TAG" >/dev/null 2>&1 || gh release create "$TAG" --draft --target "$GITHUB_SHA" --title "Feedback verification ${{ github.run_id }}" --notes "Unpublished packages for device verification." || true
           gh release upload "$TAG" packages/*.ipa packages/*.deb --clobber
